@@ -8,8 +8,9 @@
 #  docker-antlr <antlr-options>
 #
 
-FROM anapsix/alpine-java:8
-MAINTAINER Peter Vaczi <peter.vaczi@gmail.com>
+FROM openjdk:8-jdk
+#MAINTAINER Peter Vaczi <peter.vaczi@gmail.com>
+MAINTAINER t.kingless@yahoo.com  <t.kingless@yahoo.com>
 
 ENV ANTLR_VERSION 4.6
 ENV CLASSPATH .:/antlr-${ANTLR_VERSION}-complete.jar:$CLASSPATH
@@ -19,4 +20,6 @@ RUN chmod +r /antlr-${ANTLR_VERSION}-complete.jar
 
 COPY rootfs/ /
 
-ENTRYPOINT ["/usr/bin/antlr"]
+#ENTRYPOINT ["/usr/bin/antlr"]
+
+#docker run -itd --entrypoint /bin/bash --name antlr --mount type=bind,source="$(pwd)"/antlr-mega-tutorial,target=/examples test/test:tag
