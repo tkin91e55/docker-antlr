@@ -22,4 +22,5 @@ COPY rootfs/ /
 
 #ENTRYPOINT ["/usr/bin/antlr"]
 
+#tkin91e55, to run a container
 #docker run -itd --entrypoint /bin/bash --name antlr --mount type=bind,source="$(pwd)"/antlr-mega-tutorial,target=/examples test/test:tag
