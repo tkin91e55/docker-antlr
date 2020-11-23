@@ -55,5 +55,7 @@ docker-antlr <antlr-options>
 	- A lexer takes the individual characters and transforms them in tokens, the atoms that the parser uses to create the logical structure.
 	- each projects have two .g4, starting with "lexer grammar Sth" and "parser grammar Sth"
 	- in tree diagram, parser rule is the parts to recognized, lexer is for parser to reach a entity
-	- The lexer doesn?t work on the input directly, and the parser doesn?t even see the characters.
+	- The lexer doesn't work on the input directly, and the parser doesn't even see the characters.
+	-Note that lexers try to match the longest string possible for each token,
+	meaning that input beginner would match only to rule ID, when there is ambiguity.
 ```
