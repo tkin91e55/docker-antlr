@@ -27,8 +27,33 @@ docker-antlr <antlr-options>
 
 
 ### Check Points
-1. what is the differece between parser and lexer rule?
+
+1. How to verify visitor & listener? (in Pyhon, use pdb)
+	- listner logic for that language is generated after comipling .g4, for example, ${rule}Listener.js is auto generated.
+	- With Listener you can neither control the flow of a listener nor return anything from its functions, while you can do both of them with a visitor. So if you need to control how the nodes of the AST are entered, or to gather information from several of them, you probably want to use a visitor.
+2. experiment with a transversal tree, verifty its transversal
+3. how is it made? (Latte lang)[https://github.com/wkgcass/Latte-lang]
+
+### Reference
+
+1. Keywords:
+
+```
+* EOF
+* fragment??
+```
+
+2. Regex:
+
+```
+
+```
+
+3. what is the differece between parser and lexer rule?
+```
 	- lexer rule seems more fundamental
 	- A lexer takes the individual characters and transforms them in tokens, the atoms that the parser uses to create the logical structure.
-2. How to verify visitor & listener? (in Pyhon, use pdb)
-3. experiment with a transversal tree, verifty its transversal
+	- each projects have two .g4, starting with "lexer grammar Sth" and "parser grammar Sth"
+	- in tree diagram, parser rule is the parts to recognized, lexer is for parser to reach a entity
+	- The lexer doesn?t work on the input directly, and the parser doesn?t even see the characters.
+```
