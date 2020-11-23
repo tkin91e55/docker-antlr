@@ -21,3 +21,14 @@ Use the docker-antlr script exactly as you would use antlr itself.
 ```
 docker-antlr <antlr-options>
 ```
+
+### Task to do
+1. how to parse php? [php grammar](https://github.com/antlr/grammars-v4/tree/master/php)
+
+
+### Check Points
+1. what is the differece between parser and lexer rule?
+	- lexer rule seems more fundamental
+	- A lexer takes the individual characters and transforms them in tokens, the atoms that the parser uses to create the logical structure.
+2. How to verify visitor & listener? (in Pyhon, use pdb)
+3. experiment with a transversal tree, verifty its transversal
