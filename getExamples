@@ -1,0 +1,5 @@
+#!/bin/bash
+
+
+git clone git@github.com:gabriele-tomassetti/antlr-mega-tutorial.git
+git clone git@github.com:antlr/grammars-v4.git
