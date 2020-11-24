@@ -23,7 +23,15 @@ docker-antlr <antlr-options>
 ```
 
 ### Task to do
-1. how to parse php? [php grammar](https://github.com/antlr/grammars-v4/tree/master/php)
+1. parse VBLC php files, 
+	- definitive Antlr (p.243) 13.7 maximizing parser speed
+	- make workers
+2. add/update getExamples, add .gitignore
+3. weka analysis
+
+### Task done
+1. ??how to parse php? [php grammar](https://github.com/antlr/grammars-v4/tree/master/php)
+	- !!check php/ folder
 
 
 ### Check Points
@@ -32,7 +40,9 @@ docker-antlr <antlr-options>
 	- listner logic for that language is generated after comipling .g4, for example, ${rule}Listener.js is auto generated.
 	- With Listener you can neither control the flow of a listener nor return anything from its functions, while you can do both of them with a visitor. So if you need to control how the nodes of the AST are entered, or to gather information from several of them, you probably want to use a visitor.
 2. experiment with a transversal tree, verifty its transversal
-3. how is it made? (Latte lang)[https://github.com/wkgcass/Latte-lang]
+3. ??how is it made? (Latte lang)[https://github.com/wkgcass/Latte-lang] Look at the parser.java, many detail inside
+4. what is channel?
+5. how mode is used?? check https://tomassetti.me/antlr-mega-tutorial/#lexical-modes
 
 ### Reference
 
@@ -41,6 +51,7 @@ docker-antlr <antlr-options>
 ```
 * EOF
 * fragment??
+* lexer grammar , mode, pushMode, popMode
 ```
 
 2. Regex:
@@ -53,9 +64,10 @@ docker-antlr <antlr-options>
 ```
 	- lexer rule seems more fundamental
 	- A lexer takes the individual characters and transforms them in tokens, the atoms that the parser uses to create the logical structure.
-	- each projects have two .g4, starting with "lexer grammar Sth" and "parser grammar Sth"
+	- each projects have two .g4, starting with "lexer grammar Sth" and "parser grammar Sth", it is about "lexical mode"
 	- in tree diagram, parser rule is the parts to recognized, lexer is for parser to reach a entity
 	- The lexer doesn't work on the input directly, and the parser doesn't even see the characters.
-	-Note that lexers try to match the longest string possible for each token,
+	- Note that lexers try to match the longest string possible for each token,
 	meaning that input beginner would match only to rule ID, when there is ambiguity.
+	- Definitive Antlr (p.224) Parsing and Lexing XML
 ```
